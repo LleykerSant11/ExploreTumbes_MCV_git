@@ -1,0 +1,10 @@
+RewriteEngine On
+RewriteBase /ExploreTumbes_MCV/
+
+# Serve existing files and directories directly
+RewriteCond %{REQUEST_FILENAME} -f [OR]
+RewriteCond %{REQUEST_FILENAME} -d
+RewriteRule ^ - [L]
+
+# Map pretty URLs to index.php?page=...
+RewriteRule ^(.+)$ index.php?page=$1 [L,QSA]

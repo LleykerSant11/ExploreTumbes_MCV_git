@@ -13,19 +13,22 @@
                 <h2>Crear Cuenta</h2>
                 <p class="auth-subtitle">Completa el formulario para registrarte en nuestra plataforma</p>
                 <form action="<?php echo route('register'); ?>" method="post" class="auth-form">
+                    <?php if (!empty($error)): ?>
+                        <div class="auth-error"><?php echo htmlspecialchars($error); ?></div>
+                    <?php endif; ?>
                     <div class="auth-grid">
                         <label>
                             Nombre Completo*
-                            <input type="text" name="name" placeholder="Juan Pérez" required>
+                            <input type="text" name="name" value="<?php echo htmlspecialchars($old['name'] ?? ''); ?>" placeholder="Juan Pérez" required>
                         </label>
                         <label>
                             Teléfono
-                            <input type="tel" name="phone" placeholder="+51 987 654 321">
+                            <input type="tel" name="phone" value="<?php echo htmlspecialchars($old['phone'] ?? ''); ?>" placeholder="+51 987 654 321">
                         </label>
                     </div>
                     <label>
                         Correo Electrónico*
-                        <input type="email" name="email" placeholder="tu@email.com" required>
+                        <input type="email" name="email" value="<?php echo htmlspecialchars($old['email'] ?? ''); ?>" placeholder="tu@email.com" required>
                     </label>
                     <div class="auth-grid">
                         <label>

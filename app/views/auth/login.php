@@ -13,8 +13,12 @@
                 <h2>Iniciar Sesión</h2>
                 <p class="auth-subtitle">Ingresa tus credenciales para acceder a tu cuenta.</p>
                 <form action="<?php echo route('login'); ?>" method="post" class="auth-form">
+                    <?php if (!empty($error)): ?>
+                        <div class="auth-error"><?php echo htmlspecialchars($error); ?></div>
+                    <?php endif; ?>
+
                     <label for="email">Correo Electrónico</label>
-                    <input type="email" id="email" name="email" placeholder="tu@email.com" required>
+                    <input type="email" id="email" name="email" value="<?php echo htmlspecialchars($oldEmail ?? ''); ?>" placeholder="tu@email.com" required>
 
                     <label for="password">Contraseña</label>
                     <input type="password" id="password" name="password" placeholder="********" required>

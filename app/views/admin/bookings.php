@@ -1,6 +1,7 @@
 <?php require __DIR__ . '/../partials/header.php'; ?>
-<?php require __DIR__ . '/../partials/nav_admin.php'; ?>
-<section class="container admin-list">
+<div class="admin-layout">
+    <?php require __DIR__ . '/../partials/nav_admin.php'; ?>
+    <section class="container admin-list">
     <h2>Reservas</h2>
     <table>
         <thead>

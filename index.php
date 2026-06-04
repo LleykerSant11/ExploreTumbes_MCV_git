@@ -38,6 +38,14 @@ switch (true) {
         $controller = new AdminController();
         $controller->bookings();
         break;
+    case $page === 'destinos':
+        $controller = new AdminController();
+        $controller->destinos();
+        break;
+    case $page === 'users':
+        $controller = new AdminController();
+        $controller->users();
+        break;
     case $page === 'settings':
         $controller = new AdminController();
         $controller->settings();
@@ -57,6 +65,10 @@ switch (true) {
     case $page === 'register':
         $controller = new AuthController();
         $controller->register();
+        break;
+    case $page === 'logout':
+        $controller = new AuthController();
+        $controller->logout();
         break;
     case $page === 'home':
     default:
